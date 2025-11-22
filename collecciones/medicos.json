@@ -1,0 +1,51 @@
+[
+  {
+    "nombre": "Dr. Andrés Pardo",
+    "especialidad": "Cardiología",
+    "telefono": "3204567890",
+    "correo": "apardo@mediplus.com",
+    "fecha_registro": { "$date": "2023-12-10T00:00:00Z" }
+  },
+  {
+    "nombre": "Dra. Sofía Martínez",
+    "especialidad": "Dermatología",
+    "telefono": "3154598760",
+    "correo": "smartinez@mediplus.com",
+    "fecha_registro": { "$date": "2023-12-15T00:00:00Z" }
+  },
+  {
+    "nombre": "Dr. Jorge Rincón",
+    "especialidad": "Neurología",
+    "telefono": "3104589674",
+    "correo": "jrincon@mediplus.com",
+    "fecha_registro": { "$date": "2023-11-29T00:00:00Z" }
+  },
+  {
+    "nombre": "Dra. Clara Benítez",
+    "especialidad": "Pediatría",
+    "telefono": "3015874521",
+    "correo": "cbenitez@mediplus.com",
+    "fecha_registro": { "$date": "2024-01-05T00:00:00Z" }
+  },
+  {
+    "nombre": "Dr. Ricardo Gómez",
+    "especialidad": "Cirugía General",
+    "telefono": "3189632547",
+    "correo": "rgomez@mediplus.com",
+    "fecha_registro": { "$date": "2024-01-18T00:00:00Z" }
+  },
+  {
+    "nombre": "Dra. Elena Castro",
+    "especialidad": "Oftalmología",
+    "telefono": "3147859632",
+    "correo": "ecastro@mediplus.com",
+    "fecha_registro": { "$date": "2024-02-01T00:00:00Z" }
+  },
+  {
+    "nombre": "Dr. Miguel Ángel Soto",
+    "especialidad": "Gastroenterología",
+    "telefono": "3001239874",
+    "correo": "msoto@mediplus.com",
+    "fecha_registro": { "$date": "2024-02-20T00:00:00Z" }
+  }
+]

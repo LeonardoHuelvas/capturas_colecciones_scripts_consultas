@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esquema MediplusDB - MongoDB</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1600px;
+            min-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+        }
+        
+        .schema-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .column-group {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .column-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: #2d3748;
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+            border-radius: 10px;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .collection-card {
+            background: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            height: fit-content;
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+            border-color: #667eea;
+        }
+        
+        .collection-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .collection-icon {
+            font-size: 1.5em;
+        }
+        
+        .collection-name {
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        
+        .collection-body {
+            padding: 20px;
+        }
+        
+        .field {
+            padding: 12px;
+            margin-bottom: 8px;
+            background: #f7fafc;
+            border-radius: 6px;
+            border-left: 3px solid #cbd5e0;
+            transition: all 0.2s ease;
+        }
+        
+        .field:hover {
+            background: #edf2f7;
+            border-left-color: #667eea;
+        }
+        
+        .field-name {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 4px;
+        }
+        
+        .field-type {
+            color: #718096;
+            font-size: 0.9em;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .field-reference {
+            color: #667eea;
+            font-size: 0.85em;
+            margin-top: 4px;
+            font-style: italic;
+        }
+        
+        .primary-key {
+            border-left-color: #f6ad55;
+            background: #fffaf0;
+        }
+        
+        .foreign-key {
+            border-left-color: #667eea;
+            background: #f0f4ff;
+        }
+        
+        .relationships {
+            margin-top: 40px;
+            padding: 25px;
+            background: #f7fafc;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .relationships h2 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .relationship-item {
+            padding: 15px;
+            margin-bottom: 12px;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.2s ease;
+        }
+        
+        .relationship-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+        }
+        
+        .relationship-arrow {
+            font-size: 1.5em;
+            color: #667eea;
+        }
+        
+        .relationship-text {
+            flex: 1;
+        }
+        
+        .collection-ref {
+            font-weight: 600;
+            color: #667eea;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background: #667eea;
+            color: white;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 600;
+            margin-left: 8px;
+        }
+        
+        .legend {
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+        }
+        
+        .legend h3 {
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+        
+        .legend-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .legend-color {
+            width: 40px;
+            height: 25px;
+            border-radius: 4px;
+        }
+        
+        .color-pk {
+            background: #fffaf0;
+            border-left: 3px solid #f6ad55;
+        }
+        
+        .color-fk {
+            background: #f0f4ff;
+            border-left: 3px solid #667eea;
+        }
+        
+        .color-normal {
+            background: #f7fafc;
+            border-left: 3px solid #cbd5e0;
+        }
+        
+        @media (max-width: 768px) {
+            .schema-grid {
+                grid-template-columns: 1fr;
+            }
+            .container {
+                min-width: auto;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            .stats {
+                flex-direction: column;
+            }
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+        
+        .stat-card {
+            flex: 1;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .capture-mode-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .capture-mode-btn:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.5);
+        }
+        
+        .hide-for-capture {
+            display: block;
+        }
+        
+        .capture-mode .hide-for-capture {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <button class="capture-mode-btn" onclick="toggleCaptureMode()">📸 Modo Captura</button>
+
+        <h1>📊 MediplusDB - Esquema de Base de Datos</h1>
+        <div class="subtitle">Sistema de Gestión Médica - MongoDB NoSQL</div>
+
+        <div class="stats hide-for-capture">
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Colecciones</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">25</div>
+                <div class="stat-label">Campos Totales</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5</div>
+                <div class="stat-label">Relaciones</div>
+            </div>
+        </div>
+
+        <div class="schema-grid">
+            <!-- COLUMNA 1: PACIENTES Y MÉDICOS -->
+            <div class="column-group">
+                <div class="column-title">👥 PERSONAS</div>
+
+                <!-- COLECCIÓN: PACIENTES -->
+                <div class="collection-card">
+                    <div class="collection-header">
+                        <span class="collection-icon">👤</span>
+                        <span class="collection-name">pacientes</span>
+                    </div>
+                    <div class="collection-body">
+                        <div class="field primary-key">
+                            <div class="field-name">_id</div>
+                            <div class="field-type">ObjectId</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">nombre</div>
+                            <div class="field-type">String</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">documento</div>
+                            <div class="field-type">String (único)</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">fecha_nacimiento</div>
+                            <div class="field-type">Date</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">telefono</div>
+                            <div class="field-type">String</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">correo</div>
+                            <div class="field-type">String</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">direccion</div>
+                            <div class="field-type">String</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">fecha_registro</div>
+                            <div class="field-type">Date</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLECCIÓN: MEDICOS -->
+                <div class="collection-card">
+                    <div class="collection-header">
+                        <span class="collection-icon">⚕️</span>
+                        <span class="collection-name">medicos</span>
+                    </div>
+                    <div class="collection-body">
+                        <div class="field primary-key">
+                            <div class="field-name">_id</div>
+                            <div class="field-type">ObjectId</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">nombre</div>
+                            <div class="field-type">String</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">especialidad</div>
+                            <div class="field-type">String</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">telefono</div>
+                            <div class="field-type">String</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">correo</div>
+                            <div class="field-type">String</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">fecha_registro</div>
+                            <div class="field-type">Date</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLUMNA 2: CITAS E HISTORIALES -->
+            <div class="column-group">
+                <div class="column-title">📋 GESTIÓN MÉDICA</div>
+
+                <!-- COLECCIÓN: CITAS -->
+                <div class="collection-card">
+                    <div class="collection-header">
+                        <span class="collection-icon">📅</span>
+                        <span class="collection-name">citas</span>
+                    </div>
+                    <div class="collection-body">
+                        <div class="field primary-key">
+                            <div class="field-name">_id</div>
+                            <div class="field-type">ObjectId</div>
+                        </div>
+                        <div class="field foreign-key">
+                            <div class="field-name">paciente_id</div>
+                            <div class="field-type">ObjectId</div>
+                            <div class="field-reference">→ Referencia a pacientes._id</div>
+                        </div>
+                        <div class="field foreign-key">
+                            <div class="field-name">medico_id</div>
+                            <div class="field-type">ObjectId</div>
+                            <div class="field-reference">→ Referencia a medicos._id</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">fecha_cita</div>
+                            <div class="field-type">Date</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">motivo</div>
+                            <div class="field-type">String</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">estado</div>
+                            <div class="field-type">String</div>
+                            <div class="field-reference">Valores: "programada", "completada", "cancelada"</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLECCIÓN: HISTORIALES -->
+                <div class="collection-card">
+                    <div class="collection-header">
+                        <span class="collection-icon">📋</span>
+                        <span class="collection-name">historiales</span>
+                    </div>
+                    <div class="collection-body">
+                        <div class="field primary-key">
+                            <div class="field-name">_id</div>
+                            <div class="field-type">ObjectId</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">tipo_registro</div>
+                            <div class="field-type">String</div>
+                        </div>
+                        <div class="field foreign-key">
+                            <div class="field-name">paciente_id</div>
+                            <div class="field-type">ObjectId</div>
+                            <div class="field-reference">→ Referencia a pacientes._id</div>
+                        </div>
+                        <div class="field foreign-key">
+                            <div class="field-name">cita_id</div>
+                            <div class="field-type">ObjectId (opcional)</div>
+                            <div class="field-reference">→ Referencia a citas._id</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">fecha</div>
+                            <div class="field-type">Date</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">diagnostico</div>
+                            <div class="field-type">String</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">receta</div>
+                            <div class="field-type">String</div>
+                        </div>
+                        <div class="field">
+                            <div class="field-name">notas</div>
+                            <div class="field-type">String</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RELACIONES -->
+        <div class="relationships hide-for-capture">
+            <h2>🔗 Relaciones entre Colecciones</h2>
+
+            <div class="relationship-item">
+                <span class="relationship-arrow">→</span>
+                <div class="relationship-text">
+                    <span class="collection-ref">citas</span> →
+                    <span class="collection-ref">pacientes</span>
+                    <span class="badge">N:1</span>
+                    <div style="font-size: 0.9em; color: #718096; margin-top: 4px;">
+                        Muchas citas pertenecen a un paciente (citas.paciente_id)
+                    </div>
+                </div>
+            </div>
+
+            <div class="relationship-item">
+                <span class="relationship-arrow">→</span>
+                <div class="relationship-text">
+                    <span class="collection-ref">citas</span> →
+                    <span class="collection-ref">medicos</span>
+                    <span class="badge">N:1</span>
+                    <div style="font-size: 0.9em; color: #718096; margin-top: 4px;">
+                        Muchas citas son atendidas por un médico (citas.medico_id)
+                    </div>
+                </div>
+            </div>
+
+            <div class="relationship-item">
+                <span class="relationship-arrow">→</span>
+                <div class="relationship-text">
+                    <span class="collection-ref">historiales</span> →
+                    <span class="collection-ref">pacientes</span>
+                    <span class="badge">N:1</span>
+                    <div style="font-size: 0.9em; color: #718096; margin-top: 4px;">
+                        Muchos historiales pertenecen a un paciente (historiales.paciente_id)
+                    </div>
+                </div>
+            </div>
+
+            <div class="relationship-item">
+                <span class="relationship-arrow">→</span>
+                <div class="relationship-text">
+                    <span class="collection-ref">historiales</span> →
+                    <span class="collection-ref">citas</span>
+                    <span class="badge">N:1</span>
+                    <div style="font-size: 0.9em; color: #718096; margin-top: 4px;">
+                        Historial puede estar relacionado con una cita específica (historiales.cita_id)
+                    </div>
+                </div>
+            </div>
+
+            <div class="relationship-item">
+                <span class="relationship-arrow">⟷</span>
+                <div class="relationship-text">
+                    <span class="collection-ref">pacientes</span> ⟷
+                    <span class="collection-ref">medicos</span>
+                    <span class="badge">N:M</span>
+                    <div style="font-size: 0.9em; color: #718096; margin-top: 4px;">
+                        Relación muchos a muchos a través de la colección citas
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LEYENDA -->
+        <div class="legend hide-for-capture">
+            <h3>📖 Leyenda de Campos</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-color color-pk"></div>
+                    <span>Primary Key (_id)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color color-fk"></div>
+                    <span>Foreign Key (Referencias)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color color-normal"></div>
+                    <span>Campo Regular</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleCaptureMode() {
+            const container = document.querySelector('.container');
+            const btn = document.querySelector('.capture-mode-btn');
+
+            container.classList.toggle('capture-mode');
+
+            if (container.classList.contains('capture-mode')) {
+                btn.textContent = '👁️ Modo Normal';
+                btn.style.background = '#48bb78';
+            } else {
+                btn.textContent = '📸 Modo Captura';
+                btn.style.background = '#667eea';
+            }
+        }
+    </script>
+</body>
+
+</html>

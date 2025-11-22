@@ -1,0 +1,44 @@
+[
+  {
+    "paciente_id": { "$oid": "64e13a0b9cd3be7e90f312a1" },
+    "medico_id": { "$oid": "64e13a0b9cd3be7e90f312b4" },
+    "fecha_cita": { "$date": "2024-03-02T14:00:00Z" },
+    "motivo": "Control general",
+    "estado": "completada"
+  },
+  {
+    "paciente_id": { "$oid": "64e13a0b9cd3be7e90f312a2" },
+    "medico_id": { "$oid": "64e13a0b9cd3be7e90f312b5" },
+    "fecha_cita": { "$date": "2024-05-10T09:30:00Z" },
+    "motivo": "Revisión dermatológica por acné",
+    "estado": "programada"
+  },
+  {
+    "paciente_id": { "$oid": "64e13a0b9cd3be7e90f312a3" },
+    "medico_id": { "$oid": "64e13a0b9cd3be7e90f312b6" },
+    "fecha_cita": { "$date": "2024-04-20T11:00:00Z" },
+    "motivo": "Consulta por migrañas recurrentes",
+    "estado": "cancelada"
+  },
+  {
+    "paciente_id": { "$oid": "64e13a0b9cd3be7e90f312a4" },
+    "medico_id": { "$oid": "64e13a0b9cd3be7e90f312b7" },
+    "fecha_cita": { "$date": "2024-05-25T16:45:00Z" },
+    "motivo": "Vacunación infantil",
+    "estado": "programada"
+  },
+  {
+    "paciente_id": { "$oid": "64e13a0b9cd3be7e90f312a5" },
+    "medico_id": { "$oid": "64e13a0b9cd3be7e90f312b8" },
+    "fecha_cita": { "$date": "2024-06-01T08:00:00Z" },
+    "motivo": "Valoración pre-operatoria",
+    "estado": "programada"
+  },
+  {
+    "paciente_id": { "$oid": "64e13a0b9cd3be7e90f312a6" },
+    "medico_id": { "$oid": "64e13a0b9cd3be7e90f312b9" },
+    "fecha_cita": { "$date": "2024-03-15T10:30:00Z" },
+    "motivo": "Examen de la vista y cambio de gafas",
+    "estado": "completada"
+  }
+]

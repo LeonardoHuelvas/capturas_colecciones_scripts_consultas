@@ -1,0 +1,218 @@
+[
+  {
+    "nombre": "Laura Ríos",
+    "documento": "1020457896",
+    "fecha_nacimiento": { "$date": "1991-07-11T00:00:00Z" },
+    "telefono": "3005617821",
+    "correo": "laura.rios@mail.com",
+    "direccion": "Calle 45 #10-23",
+    "fecha_registro": { "$date": "2024-01-20T00:00:00Z" }
+  },
+  {
+    "nombre": "Carlos Mendoza",
+    "documento": "1002503891",
+    "fecha_nacimiento": { "$date": "1984-03-15T00:00:00Z" },
+    "telefono": "3017884502",
+    "correo": "c.mendoza@mail.com",
+    "direccion": "Av 30 #45-19",
+    "fecha_registro": { "$date": "2024-01-05T00:00:00Z" }
+  },
+  {
+    "nombre": "Sandra López",
+    "documento": "1010457892",
+    "fecha_nacimiento": { "$date": "1993-11-20T00:00:00Z" },
+    "telefono": "3104578962",
+    "correo": "s.lopez@mail.com",
+    "direccion": "Calle 12 #9-20",
+    "fecha_registro": { "$date": "2024-02-14T00:00:00Z" }
+  },
+  {
+    "nombre": "Felipe González",
+    "documento": "1034578921",
+    "fecha_nacimiento": { "$date": "1988-09-02T00:00:00Z" },
+    "telefono": "3124578963",
+    "correo": "f.gonzalez@mail.com",
+    "direccion": "Carrera 6 #15-33",
+    "fecha_registro": { "$date": "2024-02-01T00:00:00Z" }
+  },
+  {
+    "nombre": "Juliana Torres",
+    "documento": "1045267893",
+    "fecha_nacimiento": { "$date": "1995-06-25T00:00:00Z" },
+    "telefono": "3204578961",
+    "correo": "j.torres@mail.com",
+    "direccion": "Calle 100 #15-45",
+    "fecha_registro": { "$date": "2024-01-29T00:00:00Z" }
+  },
+  {
+    "nombre": "Mario Herrera",
+    "documento": "1052634789",
+    "fecha_nacimiento": { "$date": "1982-12-10T00:00:00Z" },
+    "telefono": "3145789623",
+    "correo": "m.herrera@mail.com",
+    "direccion": "Calle 3 #22-10",
+    "fecha_registro": { "$date": "2024-01-12T00:00:00Z" }
+  },
+  {
+    "nombre": "Estefanía Ruiz",
+    "documento": "1062534791",
+    "fecha_nacimiento": { "$date": "1990-04-11T00:00:00Z" },
+    "telefono": "3132547789",
+    "correo": "e.ruiz@mail.com",
+    "direccion": "Diagonal 45 #66-20",
+    "fecha_registro": { "$date": "2024-02-18T00:00:00Z" }
+  },
+  {
+    "nombre": "Daniel Pérez",
+    "documento": "1002534790",
+    "fecha_nacimiento": { "$date": "1998-02-18T00:00:00Z" },
+    "telefono": "3051278546",
+    "correo": "d.perez@mail.com",
+    "direccion": "Calle 50 #20-12",
+    "fecha_registro": { "$date": "2024-02-10T00:00:00Z" }
+  },
+  {
+    "nombre": "Gabriela Castro",
+    "documento": "1024578964",
+    "fecha_nacimiento": { "$date": "1994-03-15T00:00:00Z" },
+    "telefono": "3114578962",
+    "correo": "g.castro@mail.com",
+    "direccion": "Av 80 #44-12",
+    "fecha_registro": { "$date": "2024-01-25T00:00:00Z" }
+  },
+  {
+    "nombre": "Antonio Morales",
+    "documento": "1014567891",
+    "fecha_nacimiento": { "$date": "1987-10-05T00:00:00Z" },
+    "telefono": "3154578962",
+    "correo": "a.morales@mail.com",
+    "direccion": "Calle 1 #8-21",
+    "fecha_registro": { "$date": "2024-01-15T00:00:00Z" }
+  },
+  {
+    "nombre": "ELIZABETH MENCO CALVO",
+    "documento": "1001806396",
+    "fecha_nacimiento": { "$date": "1991-10-09T00:00:00Z" },
+    "telefono": "3004589633",
+    "correo": "elizabeth.menco@mail.com",
+    "direccion": "Sin información",
+    "fecha_registro": { "$date": "2024-01-20T00:00:00Z" }
+  },
+  {
+    "nombre": "JEISON JAIR AVENDAÑO CERVANTES",
+    "documento": "1001852799",
+    "fecha_nacimiento": { "$date": "1990-01-19T00:00:00Z" },
+    "telefono": "3114789965",
+    "correo": "jeison.avendano@mail.com",
+    "direccion": "Sin información",
+    "fecha_registro": { "$date": "2024-01-20T00:00:00Z" }
+  },
+  {
+    "nombre": "DAIVER JOSE POLO DURAN",
+    "documento": "1001856397",
+    "fecha_nacimiento": { "$date": "1994-04-14T00:00:00Z" },
+    "telefono": "3145896324",
+    "correo": "daiver.polo@mail.com",
+    "direccion": "Sin información",
+    "fecha_registro": { "$date": "2024-01-20T00:00:00Z" }
+  },
+  {
+    "nombre": "CESAR AGUSTIN SALAS MERCADO",
+    "documento": "1001869414",
+    "fecha_nacimiento": { "$date": "1989-05-10T00:00:00Z" },
+    "telefono": "3107854621",
+    "correo": "cesar.salas@mail.com",
+    "direccion": "Sin información",
+    "fecha_registro": { "$date": "2024-01-20T00:00:00Z" }
+  },
+  {
+    "nombre": "SOSLENYS MARIETH PEREIRA CANTILLO",
+    "documento": "1001869935",
+    "fecha_nacimiento": { "$date": "1997-12-20T00:00:00Z" },
+    "telefono": "3017859644",
+    "correo": "soslenys.pereira@mail.com",
+    "direccion": "Sin información",
+    "fecha_registro": { "$date": "2024-01-20T00:00:00Z" }
+  },
+  {
+    "nombre": "RAFAEL SANTOS CAMARGO JAIMES",
+    "documento": "1001875329",
+    "fecha_nacimiento": { "$date": "1984-03-03T00:00:00Z" },
+    "telefono": "3204586971",
+    "correo": "rafael.camargo@mail.com",
+    "direccion": "Sin información",
+    "fecha_registro": { "$date": "2024-01-20T00:00:00Z" }
+  },
+  {
+    "nombre": "MARIA CAROLINA DIAZ MEJIA",
+    "documento": "1001878115",
+    "fecha_nacimiento": { "$date": "1992-07-27T00:00:00Z" },
+    "telefono": "3154789651",
+    "correo": "maria.diaz@mail.com",
+    "direccion": "Sin información",
+    "fecha_registro": { "$date": "2024-01-20T00:00:00Z" }
+  },
+  {
+    "nombre": "NICOOL ANDREA LEDESMA ATENCIA",
+    "documento": "1001884591",
+    "fecha_nacimiento": { "$date": "1996-12-10T00:00:00Z" },
+    "telefono": "3014578965",
+    "correo": "nicool.ledesma@mail.com",
+    "direccion": "Sin información",
+    "fecha_registro": { "$date": "2024-01-20T00:00:00Z" }
+  },
+  {
+    "nombre": "DEIVIS JACINTO SAMPER MORENO",
+    "documento": "1001886321",
+    "fecha_nacimiento": { "$date": "1990-09-20T00:00:00Z" },
+    "telefono": "3124578966",
+    "correo": "deivis.samper@mail.com",
+    "direccion": "Sin información",
+    "fecha_registro": { "$date": "2024-01-20T00:00:00Z" }
+  },
+  {
+    "nombre": "WENDY VANESA BARROS ALVAREZ",
+    "documento": "1001886348",
+    "fecha_nacimiento": { "$date": "1995-10-14T00:00:00Z" },
+    "telefono": "3007854102",
+    "correo": "wendy.barros@mail.com",
+    "direccion": "Sin información",
+    "fecha_registro": { "$date": "2024-01-20T00:00:00Z" }
+  },
+  {
+    "nombre": "MATEO DELFIN ACOSTA MARTINEZ",
+    "documento": "1001886873",
+    "fecha_nacimiento": { "$date": "1998-11-30T00:00:00Z" },
+    "telefono": "3147859963",
+    "correo": "mateo.acosta@mail.com",
+    "direccion": "Sin información",
+    "fecha_registro": { "$date": "2024-01-20T00:00:00Z" }
+  },
+  {
+    "nombre": "ANGELICA TORRES SANCHEZ",
+    "documento": "1001890163",
+    "fecha_nacimiento": { "$date": "1994-09-28T00:00:00Z" },
+    "telefono": "3154789659",
+    "correo": "angelica.torres@mail.com",
+    "direccion": "Sin información",
+    "fecha_registro": { "$date": "2024-01-20T00:00:00Z" }
+  },
+  {
+    "nombre": "JOSE DAVID BOLAÑO MENDOZA",
+    "documento": "1001917591",
+    "fecha_nacimiento": { "$date": "1990-04-17T00:00:00Z" },
+    "telefono": "3004578968",
+    "correo": "jose.bolano@mail.com",
+    "direccion": "Sin información",
+    "fecha_registro": { "$date": "2024-01-20T00:00:00Z" }
+  },
+  {
+    "nombre": "MARTHA SOFIA DIAZ AVILA",
+    "documento": "1001939458",
+    "fecha_nacimiento": { "$date": "1993-03-06T00:00:00Z" },
+    "telefono": "3204578944",
+    "correo": "martha.diaz@mail.com",
+    "direccion": "Sin información",
+    "fecha_registro": { "$date": "2024-01-20T00:00:00Z" }
+  }
+]

@@ -1,0 +1,147 @@
+[
+  {
+    "tipo_registro": "Historia Clínica",
+    "paciente_id": { "$oid": "64e13a0b9cd3be7e90f312a1" },
+    "fecha": { "$date": "2024-01-15T00:00:00Z" },
+    "diagnostico": "Hipertensión leve",
+    "receta": "Enalapril 10mg diario",
+    "notas": "Revisar presión en 2 semanas. Paciente consciente de la importancia del ejercicio."
+  },
+  {
+    "tipo_registro": "Historia Clínica",
+    "paciente_id": { "$oid": "64e13a0b9cd3be7e90f312a2" },
+    "fecha": { "$date": "2024-02-28T00:00:00Z" },
+    "diagnostico": "Dermatitis de contacto",
+    "receta": "Crema de hidrocortisona al 1% 2 veces al día.",
+    "notas": "Identificar y evitar el agente irritante. Control en 1 mes."
+  },
+  {
+    "tipo_registro": "Historia Clínica",
+    "paciente_id": { "$oid": "64e13a0b9cd3be7e90f312a3" },
+    "fecha": { "$date": "2024-03-05T00:00:00Z" },
+    "diagnostico": "Cefalea tensional crónica",
+    "receta": "Naproxeno 500mg, según necesidad. Terapia física.",
+    "notas": "Recomendar manejo del estrés y seguimiento con Neurología."
+  },
+  {
+    "tipo_registro": "Historia Clínica",
+    "paciente_id": { "$oid": "64e13a0b9cd3be7e90f312a4" },
+    "fecha": { "$date": "2024-04-10T00:00:00Z" },
+    "diagnostico": "Gripe estacional",
+    "receta": "Acetaminofén 500mg cada 6 horas. Reposo e hidratación.",
+    "notas": "Síntomas leves a moderados. Instrucciones sobre signos de alarma para padres."
+  },
+  {
+    "tipo_registro": "Historia Clínica",
+    "paciente_id": { "$oid": "64e13a0b9cd3be7e90f312a5" },
+    "fecha": { "$date": "2024-05-01T00:00:00Z" },
+    "diagnostico": "Colelitiasis (Cálculos biliares)",
+    "receta": "Dieta baja en grasas. Programar cirugía electiva.",
+    "notas": "Paciente estable. Pendiente de resultados de laboratorio pre-quirúrgicos."
+  },
+  {
+    "tipo_registro": "Cita",
+    "paciente_documento": "1001023949",
+    "medico": "Dr. Andrés Pardo",
+    "fecha": { "$date": "2024-02-10T08:00:00Z" },
+    "motivo": "Control general"
+  },
+  {
+    "tipo_registro": "Cita",
+    "paciente_documento": "1001057605",
+    "medico": "Dra. Sofía Martínez",
+    "fecha": { "$date": "2024-02-11T10:00:00Z" },
+    "motivo": "Dolor abdominal"
+  },
+  {
+    "tipo_registro": "Cita",
+    "paciente_documento": "1001159744",
+    "medico": "Dr. Julio Restrepo",
+    "fecha": { "$date": "2024-02-12T09:30:00Z" },
+    "motivo": "Revisión pediátrica"
+  },
+  {
+    "tipo_registro": "Cita",
+    "paciente_documento": "1001283729",
+    "medico": "Dra. Marcela Gómez",
+    "fecha": { "$date": "2024-02-12T14:00:00Z" },
+    "motivo": "Alergia cutánea"
+  },
+  {
+    "tipo_registro": "Cita",
+    "paciente_documento": "1001327487",
+    "medico": "Dr. Esteban Ortiz",
+    "fecha": { "$date": "2024-02-13T07:45:00Z" },
+    "motivo": "Migraña"
+  },
+  {
+    "tipo_registro": "Cita",
+    "paciente_documento": "1001401131",
+    "medico": "Dra. Kelly Rivas",
+    "fecha": { "$date": "2024-02-13T11:15:00Z" },
+    "motivo": "Dolor pélvico"
+  },
+  {
+    "tipo_registro": "Cita",
+    "paciente_documento": "1001532601",
+    "medico": "Dr. Mauricio Torres",
+    "fecha": { "$date": "2024-02-14T15:00:00Z" },
+    "motivo": "Consulta oncológica"
+  },
+  {
+    "tipo_registro": "Cita",
+    "paciente_documento": "1001555358",
+    "medico": "Dra. Viviana Díaz",
+    "fecha": { "$date": "2024-02-14T16:00:00Z" },
+    "motivo": "Irritación ocular"
+  },
+  {
+    "tipo_registro": "Cita",
+    "paciente_documento": "1001672885",
+    "medico": "Dr. Samuel Pineda",
+    "fecha": { "$date": "2024-02-15T08:30:00Z" },
+    "motivo": "Lesión muscular"
+  },
+  {
+    "tipo_registro": "Cita",
+    "paciente_documento": "1001788821",
+    "medico": "Dra. Natalia Cárdenas",
+    "fecha": { "$date": "2024-02-15T10:45:00Z" },
+    "motivo": "Evaluación psicológica"
+  },
+  {
+    "tipo_registro": "Cita",
+    "paciente_documento": "1001806396",
+    "medico": "Dr. Sergio Londoño",
+    "fecha": { "$date": "2024-02-16T09:00:00Z" },
+    "motivo": "Crisis de ansiedad"
+  },
+  {
+    "tipo_registro": "Cita",
+    "paciente_documento": "1001852799",
+    "medico": "Dra. Laura Sánchez",
+    "fecha": { "$date": "2024-02-16T13:15:00Z" },
+    "motivo": "Dolor lumbar"
+  },
+  {
+    "tipo_registro": "Cita",
+    "paciente_documento": "1001856397",
+    "medico": "Dr. Omar Jiménez",
+    "fecha": { "$date": "2024-02-17T08:00:00Z" },
+    "motivo": "Infección urinaria"
+  },
+  {
+    "tipo_registro": "Cita",
+    "paciente_documento": "1001869414",
+    "medico": "Dra. Daniela Ruiz",
+    "fecha": { "$date": "2024-02-17T11:00:00Z" },
+    "motivo": "Problemas auditivos"
+  },
+  {
+    "tipo_registro": "Cita",
+    "paciente_documento": "1001869935",
+    "medico": "Dr. Jorge Álvarez",
+    "fecha": { "$date": "2024-02-18T07:30:00Z" },
+    "motivo": "Control de rutina"
+  }
+]
