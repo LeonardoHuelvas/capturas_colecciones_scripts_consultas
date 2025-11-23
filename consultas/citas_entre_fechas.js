@@ -1,6 +1,6 @@
 db.citas.find({
-  fecha: {
-    $gte: ISODate("2024-02-10"),
-    $lte: ISODate("2024-02-20")
-  }
+    fecha_cita: {
+        $gte: ISODate("2024-03-01"),
+        $lte: ISODate("2024-03-10")
+    }
 })
